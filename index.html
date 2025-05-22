@@ -73,6 +73,40 @@
     <h1>24H 第29届 星际2v2比赛 – 对战视频分享</h1>
     <a href="https://challonge.com/24h29th2v2" class="bracket-link" target="_blank">View Tournament Bracket 查看比赛赛程</a>
     <a href="https://justhostingbwmap.blob.core.windows.net/bwmap/(8)24H_Big%20Game%20Hunters%20(Remastered).scm" class="bracket-link" target="_blank">2v2 官方比赛地图下载_请用Use Map Settings模式</a>
+    <h2>📅 Upcoming Matches</h2>
+    <ul id="match-times">
+      <li><strong>高飞布衣 vs 瑞神虎哥</strong><br>
+        北京时间: 2025-05-24 10:00<br>
+        本地时间: <span class="local-time" data-time="2025-05-24T10:00:00+08:00"></span>
+      </li>
+      <li><strong>酸菜多多 vs 得意CC</strong><br>
+        北京时间: 2025-05-24 10:30<br>
+        本地时间: <span class="local-time" data-time="2025-05-24T10:30:00+08:00"></span>
+      </li>
+      <li><strong>Yida方平 vs Azhi大帝</strong><br>
+        北京时间: 2025-05-25 12:00<br>
+        本地时间: <span class="local-time" data-time="2025-05-25T12:00:00+08:00"></span>
+      </li>
+    </ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".local-time").forEach(el => {
+      const timeStr = el.getAttribute("data-time");
+      const local = new Date(timeStr);
+      const options = {
+        weekday: "short",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZoneName: "short"
+      };
+      el.textContent = local.toLocaleString(undefined, options);
+    });
+  });
+</script>
     <ul>
 
       <li>
