@@ -65,7 +65,17 @@
     .vod-link:hover {
       text-decoration: underline;
     }
-  </style>
+    .fire-tag {
+      display: inline-block;
+      margin-left: 6px;
+      animation: flicker 1.2s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.2); opacity: 0.85; }
+    }
+    </style>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -110,7 +120,7 @@
 </script>
     <ul>
       <li><strong>Bo5 点播表演赛1v1 </strong> 滚来滚去（3） vs 得意地笑 (0)–
-        <a href="https://www.bilibili.com/video/BV12zJxznEKE" class="vod-link" target="_blank">Watch VOD</a>
+        <a href="https://www.bilibili.com/video/BV12zJxznEKE" class="vod-link" target="_blank">Watch VOD</a><span class="fire-tag timed" data-updated="2025-05-23">🔥</span>
       </li>
       <li>
         <strong>Match 1:</strong> Last8x & WuGong (3) vs Buo & 六叔 (2) –
@@ -172,9 +182,24 @@
       </li>
       <li>
         <strong>Match 17:</strong> 田&龟（2选） (1) vs 石头&山鸡 (3) –
-        <a href="https://youtube.com/live/7luZ-ekzqR8?feature=share" class="vod-link" target="_blank">Watch VOD</a>
+        <a href="https://youtube.com/live/7luZ-ekzqR8?feature=share" class="vod-link" target="_blank">Watch VOD</a><span class="fire-tag timed" data-updated="2025-05-23">🔥</span>
       </li>  
     </ul>
   </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const now = new Date();
+
+    document.querySelectorAll(".fire-tag.timed").forEach(el => {
+      const updatedStr = el.getAttribute("data-updated");
+      const updatedDate = new Date(updatedStr);
+      const diffDays = (now - updatedDate) / (1000 * 60 * 60 * 24);
+
+      if (diffDays > 3) {
+        el.style.display = "none";
+      }
+    });
+  });
+</script>
 </body>
 </html>
